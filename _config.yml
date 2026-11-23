@@ -1,0 +1,32 @@
+title: Paper Notes
+description: Scientific Literature Reading Journal & Research Portfolio — Molecular Science & Bioinformatics (UWA)
+url: "https://tranphuongminh2346.github.io"
+baseurl: "/paper-notes"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-relative-links
+  - jekyll-readme-index
+
+relative_links:
+  enabled: true
+  collections: true
+
+readme_index:
+  enabled: true
+  remove_originals: false
+  with_frontmatter: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - templates
+  - LICENSE

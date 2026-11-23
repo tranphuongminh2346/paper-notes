@@ -1,0 +1,57 @@
+# Copyrighted papers, documents, and supplementary data
+*.pdf
+*.epub
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.ppt
+*.pptx
+
+# Local drafts, scratch notes, and temporary files
+drafts/
+scratch/
+private/
+*.local.md
+*.tmp
+*.bak
+*.log
+
+# Local assistant, editor, and IDE configs
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+.agent/
+.agents/
+.claude/
+.cursor/
+.gemini/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment secrets
+.env
+.env.*
+
+# Local build, preview, and runtime caches
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+site/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+node_modules/
+
+# OS metadata
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 280" width="1200" height="280" role="img" aria-label="Paper Notes — Scientific Literature Reading Journal and Research Portfolio">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1526" />
+      <stop offset="55%" stop-color="#10283d" />
+      <stop offset="100%" stop-color="#0d3b46" />
+    </linearGradient>
+    <linearGradient id="helix-grad-a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2" />
+    </linearGradient>
+    <linearGradient id="helix-grad-b" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#5eead4" stop-opacity="0.18" />
+    </linearGradient>
+    <radialGradient id="glow" cx="85%" cy="35%" r="48%">
+      <stop offset="0%" stop-color="#14b8a6" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#0b1526" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="dot-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#94a3b8" fill-opacity="0.14" />
+    </pattern>
+  </defs>
+
+  <!-- Base container -->
+  <rect x="1" y="1" width="1198" height="278" rx="18" fill="url(#bg-grad)" stroke="#1e3a5f" stroke-opacity="0.75" stroke-width="1.5" />
+  <rect x="1" y="1" width="1198" height="278" rx="18" fill="url(#dot-grid)" />
+  <rect x="1" y="1" width="1198" height="278" rx="18" fill="url(#glow)" />
+
+  <!-- Subtle right-side geometric DNA helix & molecular nodes -->
+  <g opacity="0.88">
+    <!-- Base-pair rungs -->
+    <line x1="876" y1="68" x2="904" y2="96" stroke="#5eead4" stroke-opacity="0.24" stroke-width="1.6" />
+    <line x1="922" y1="74" x2="940" y2="112" stroke="#38bdf8" stroke-opacity="0.22" stroke-width="1.6" />
+    <line x1="975" y1="98" x2="965" y2="146" stroke="#5eead4" stroke-opacity="0.28" stroke-width="1.6" />
+    <line x1="1024" y1="126" x2="1002" y2="174" stroke="#38bdf8" stroke-opacity="0.24" stroke-width="1.6" />
+    <line x1="1068" y1="150" x2="1050" y2="190" stroke="#5eead4" stroke-opacity="0.26" stroke-width="1.6" />
+    <line x1="1116" y1="168" x2="1104" y2="206" stroke="#38bdf8" stroke-opacity="0.22" stroke-width="1.6" />
+
+    <!-- Dual sinusoidal strands -->
+    <path d="M 830 48 C 885 40, 920 120, 976 132 C 1032 144, 1076 205, 1148 214" fill="none" stroke="url(#helix-grad-a)" stroke-width="2.6" stroke-linecap="round" />
+    <path d="M 830 126 C 885 138, 920 56, 976 74 C 1032 92, 1076 140, 1148 148" fill="none" stroke="url(#helix-grad-b)" stroke-width="2.2" stroke-linecap="round" />
+    <path d="M 848 188 C 906 172, 954 226, 1016 206 C 1072 188, 1106 236, 1158 228" fill="none" stroke="#2dd4bf" stroke-opacity="0.16" stroke-width="1.6" stroke-dasharray="4 6" />
+
+    <!-- Molecular vertices -->
+    <circle cx="876" cy="68" r="4" fill="#2dd4bf" fill-opacity="0.55" />
+    <circle cx="904" cy="96" r="3" fill="#38bdf8" fill-opacity="0.45" />
+    <circle cx="975" cy="98" r="4.5" fill="#5eead4" fill-opacity="0.65" />
+    <circle cx="965" cy="146" r="3.5" fill="#38bdf8" fill-opacity="0.5" />
+    <circle cx="1024" cy="126" r="3.5" fill="#2dd4bf" fill-opacity="0.5" />
+    <circle cx="1002" cy="174" r="4" fill="#38bdf8" fill-opacity="0.55" />
+    <circle cx="1068" cy="150" r="4" fill="#5eead4" fill-opacity="0.6" />
+    <circle cx="1116" cy="168" r="3" fill="#38bdf8" fill-opacity="0.45" />
+  </g>
+
+  <!-- Left-side editorial typography -->
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+    <!-- Top university badge pill -->
+    <rect x="64" y="46" width="388" height="28" rx="14" fill="#14b8a6" fill-opacity="0.14" stroke="#2dd4bf" stroke-opacity="0.38" stroke-width="1" />
+    <circle cx="82" cy="60" r="3.5" fill="#2dd4bf" />
+    <text x="96" y="64" font-size="11.5" font-weight="600" letter-spacing="1.4" fill="#99f6e4">UNIVERSITY OF WESTERN AUSTRALIA · PORTFOLIO</text>
+
+    <!-- Main Title -->
+    <text x="64" y="138" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700" letter-spacing="-0.8" fill="#f8fafc">Paper Notes</text>
+
+    <!-- Subtitle -->
+    <text x="64" y="176" font-size="19" font-weight="400" fill="#cbd5e1">Scientific Literature Reading Journal — Molecular Science &amp; Bioinformatics</text>
+
+    <!-- Bottom divider and domain tags -->
+    <line x1="64" y1="208" x2="760" y2="208" stroke="#334155" stroke-opacity="0.7" stroke-width="1" />
+    <text x="64" y="236" font-size="13.5" font-weight="500" letter-spacing="0.3" fill="#5eead4">Genetics  ·  Molecular Biology  ·  Synthetic Biology  ·  Bioinformatics  ·  Genomics  ·  Machine Learning</text>
+  </g>
+</svg>
