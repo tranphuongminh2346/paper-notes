@@ -1,25 +1,18 @@
 # About
 
-[← Back to Home](README.md)
+[Back to home](README.md)
 
-## Researcher Profile
+## Background
 
-I am **Minh Tran**, an undergraduate student studying **Molecular Science and Bioinformatics** at the **University of Western Australia (UWA)**.  
-My academic focus lies at the intersection of wet-lab molecular biology (particularly CRISPR systems and plant synthetic biology) and computational sequence analysis.
+I am Minh Tran, an undergraduate student in Molecular Science and Bioinformatics at the University of Western Australia (UWA). My studies cover molecular biology, genetics, plant synthetic biology, and computational sequence analysis.
 
-## Purpose of This Journal
+The idea for this repository came from BIOC3005 at UWA, where the article club taught me how to read and evaluate research papers. Rather than skimming abstracts or leaving highlights inside PDF files, I write structured notes here to check whether I actually understand each study's design, controls, and conclusions.
 
-Passive reading rarely builds lasting scientific intuition. I maintain **Paper Notes** to:
+## How the notes are kept
 
-1. Build a durable, structured knowledge base across genetics, molecular biology, synthetic biology, genomics, bioinformatics, and machine learning.
-2. Practice deconstructing research questions, explicit vs. implicit hypotheses, experimental controls, and figure-by-figure evidence.
-3. Connect biological mechanisms with computational methods and cross-paper conceptual synthesis.
+Every entry follows a few ground rules:
 
-## Scientific Integrity Standards
-
-Every note in this repository follows strict academic principles:
-
-- **Verifiable Metadata Only:** Bibliographic records (`title`, `authors`, `year`, `journal`, `doi`) are verified directly against Crossref or publisher records and are never fabricated.
-- **Honest Progress Tracking:** Notes with incomplete analyses carry `In Progress` or `Draft` status and are never counted toward completed reading statistics.
-- **Clear Attribution & Separation:** Published experimental results and author conclusions are separated clearly from personal interpretation (`My Understanding`) and critical limitations.
-- **Copyright Respect:** No article PDFs or copyrighted publisher figures are redistributed in this repository. Any diagrams stored in `assets/images/` are original schematics drawn independently with full attribution.
+- Bibliographic fields (`title`, `authors`, `year`, `journal`, `doi`) are checked against Crossref or the publisher record before writing.
+- Notes that are not finished stay labeled `In Progress` or `Draft` and are not counted as completed.
+- Authors' claims and experimental data are kept separate from my own summary and limitations notes.
+- No article PDFs or copyrighted publisher figures are committed here; any figures in `assets/images/` are self-drawn schematics with source citations.

@@ -1,69 +1,54 @@
-# Paper Notes
+# Paper notes
 
-> Scientific Literature Reading Journal & Research Portfolio · Molecular Science & Bioinformatics, University of Western Australia
+Reading notes on primary biology and bioinformatics papers by Minh Tran, an undergraduate student in Molecular Science and Bioinformatics at the University of Western Australia (UWA).
 
-[About](about.md) · [Papers Archive](papers/README.md) · [Concepts](concepts/README.md) · [Reading List](reading-list.md) · [Web Portfolio](https://tranphuongminh2346.github.io/paper-notes/)
+[About](about.md) · [Papers archive](papers/README.md) · [Concepts](concepts/README.md) · [Reading list](reading-list.md) · [Web version](https://tranphuongminh2346.github.io/paper-notes/)
 
----
+## Background
 
-## Introduction
+The idea for this repository came from BIOC3005 at UWA, where the article club taught me how to read and break down scientific papers. I started keeping written notes here so I could apply the same habit to papers I read outside class.
 
-Welcome to **Paper Notes**, my personal scientific literature reading journal and research portfolio.  
-I am **Minh Tran**, an undergraduate student in **Molecular Science and Bioinformatics** at the **University of Western Australia (UWA)**, building a structured archive of primary research analyses across modern molecular biology and computational biosciences.
+Each note follows a 12-section template covering the paper's question, hypotheses, methods, figures, and limitations, followed by my own summary and follow-up questions. Unfinished notes stay marked as `In Progress` or `Draft`, and citations are checked against each paper's DOI.
 
-Every entry follows a consistent 12-section analytical framework — examining research questions, explicit vs. inferred hypotheses, experimental controls, figure-by-figure evidence, and methodological limitations — while strictly separating **verified published claims** from **my own synthesis and open questions**.
+## Research interests
 
----
+My reading focuses on molecular and synthetic biology, especially CRISPR-Cas9 and Cas12a/Cpf1 effectors, RNA-guided nucleic acid targeting, and plant genetic circuits. I also read across genetics, functional genomics, and machine learning methods for biological sequences such as guide RNA activity prediction.
 
-## Research Interests
+## Latest notes
 
-- **Molecular & Synthetic Biology:** CRISPR-Cas effectors (Cas9, Cas12a/Cpf1), RNA-guided nucleic acid targeting, genetic circuits, and plant synthetic biology.
-- **Genetics & Functional Genomics:** Regulatory variation, chromatin accessibility, epigenomics, transcriptomics, and genome-wide perturbation screens.
-- **Bioinformatics & Machine Learning:** Deep learning on nucleic acid sequences, guide RNA activity prediction, structural modeling, and reproducible analysis.
-
----
-
-## Latest Paper Notes
-
-| Paper | Authors | Year | Field | Reading Status |
+| Paper | Authors | Year | Field | Reading status |
 | :--- | :--- | :---: | :--- | :--- |
 | [Deep learning improves prediction of CRISPR–Cpf1 guide RNA activity](papers/bioinformatics/2018-kim-deep-learning-crispr-cpf1.md) | Kim et al. | 2018 | [Bioinformatics](papers/bioinformatics/README.md) | `In Progress` |
 
-View the complete archive in [Papers Archive](papers/README.md).
+See the full list in [Papers archive](papers/README.md).
 
----
+## Browse by field
 
-## Browse by Research Field
-
-| Research Field | Focus | Notes |
+| Research field | Focus | Notes |
 | :--- | :--- | :---: |
-| [Genetics](papers/genetics/README.md) | Inheritance, quantitative genetics, regulatory variants, and genetic perturbation screens. | 0 |
-| [Molecular Biology](papers/molecular-biology/README.md) | Mechanisms of DNA/RNA catalysis, CRISPR effectors, gene expression, and protein function. | 0 |
+| [Genetics](papers/genetics/README.md) | Inheritance, quantitative genetics, regulatory variants, and perturbation screens. | 0 |
+| [Molecular Biology](papers/molecular-biology/README.md) | Mechanisms of DNA and RNA catalysis, CRISPR effectors, gene expression, and protein function. | 0 |
 | [Synthetic Biology](papers/synthetic-biology/README.md) | Engineered genetic circuits, cellular logic gates, and synthetic regulatory parts. | 0 |
-| [Bioinformatics](papers/bioinformatics/README.md) | Sequence modeling, guide RNA design algorithms, structural analysis, and bioinformatics pipelines. | 1 |
+| [Bioinformatics](papers/bioinformatics/README.md) | Sequence modeling, guide RNA design algorithms, structural analysis, and analysis pipelines. | 1 |
 | [Genomics](papers/genomics/README.md) | Chromatin accessibility, epigenomics, transcriptomics, and genome-wide profiling. | 0 |
 | [Machine Learning](papers/machine-learning/README.md) | Deep learning and statistical modeling applied to biological sequences and phenotypes. | 0 |
 
----
+## Reading statistics
 
-## Reading Statistics
-
-All counts below strictly reflect verified YAML metadata inside `papers/` (unfinished drafts and in-progress notes are never counted as completed):
+Counts below reflect the YAML metadata in `papers/`. Drafts and in-progress notes are not counted as completed.
 
 | Metric | Count |
 | :--- | :---: |
-| Total Papers Added | 1 |
-| Completed Notes | 0 |
-| Currently Reading (`In Progress` / `Draft`) | 1 |
+| Total papers added | 1 |
+| Completed notes | 0 |
+| Currently reading (`In Progress` / `Draft`) | 1 |
 | Queued (`Not Started`) | 0 |
 
-**Monthly Activity:** *No dated reading entries yet — monthly counts update strictly from notes containing a verified `date_read` (`YYYY-MM-DD`).*
+Monthly counts will appear once completed notes include a `date_read` (`YYYY-MM-DD`).
 
----
+## Links
 
-## Profile & Links
-
-- **Web Portfolio (GitHub Pages):** [tranphuongminh2346.github.io/paper-notes](https://tranphuongminh2346.github.io/paper-notes/)
-- **GitHub Profile:** [github.com/tranphuongminh2346](https://github.com/tranphuongminh2346)
-- **Repository:** [github.com/tranphuongminh2346/paper-notes](https://github.com/tranphuongminh2346/paper-notes)
-- **Template Reference:** [templates/paper-template.md](templates/paper-template.md)
+- Web portfolio: [tranphuongminh2346.github.io/paper-notes](https://tranphuongminh2346.github.io/paper-notes/)
+- GitHub profile: [github.com/tranphuongminh2346](https://github.com/tranphuongminh2346)
+- Repository: [github.com/tranphuongminh2346/paper-notes](https://github.com/tranphuongminh2346/paper-notes)
+- Note template: [templates/paper-template.md](templates/paper-template.md)

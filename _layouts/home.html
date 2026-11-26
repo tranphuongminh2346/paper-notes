@@ -13,14 +13,14 @@ layout: default
 
 <section class="hero">
   <span class="hero-kicker">University of Western Australia · Molecular Science &amp; Bioinformatics</span>
-  <h1 class="hero-title">Scientific Paper Reading Journal &amp; Research Portfolio</h1>
+  <h1 class="hero-title">Scientific paper reading journal and portfolio</h1>
   <p class="hero-lead">
-    A structured archive of primary literature analyses across molecular biology, genetics, synthetic biology, genomics, and computational biosciences — strictly separating verified published results from independent critical synthesis.
+    The idea for this journal came from BIOC3005 at UWA, where the article club taught me how to read primary papers. I keep written notes here to examine methods, figures, and limitations while separating published claims from my own questions.
   </p>
   <div class="hero-actions">
-    <a class="btn-primary" href="{{ '/papers/' | relative_url }}">Explore Paper Archive →</a>
-    <a class="btn-secondary" href="{{ '/about.html' | relative_url }}">About &amp; Integrity</a>
-    <a class="btn-ghost" href="https://github.com/tranphuongminh2346" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+    <a class="btn-primary" href="{{ '/papers/' | relative_url }}">Browse archive</a>
+    <a class="btn-secondary" href="{{ '/about.html' | relative_url }}">About</a>
+    <a class="btn-ghost" href="https://github.com/tranphuongminh2346" target="_blank" rel="noopener noreferrer">GitHub</a>
   </div>
 </section>
 
@@ -45,8 +45,8 @@ layout: default
 
 <section class="section-block">
   <div class="section-head">
-    <h2>Latest Paper Notes</h2>
-    <a class="section-link" href="{{ '/papers/' | relative_url }}">View full archive →</a>
+    <h2>Latest notes</h2>
+    <a class="section-link" href="{{ '/papers/' | relative_url }}">View all</a>
   </div>
 
   {% if sorted_papers.size > 0 %}
@@ -98,8 +98,8 @@ layout: default
 
 <section class="section-block">
   <div class="section-head">
-    <h2>Browse by Research Field</h2>
-    <a class="section-link" href="{{ '/reading-list.html' | relative_url }}">Reading queue →</a>
+    <h2>Browse by field</h2>
+    <a class="section-link" href="{{ '/reading-list.html' | relative_url }}">Reading list</a>
   </div>
 
   {% assign cnt_genetics = all_papers | where: "category", "genetics" | size %}
@@ -162,7 +162,7 @@ layout: default
 
 <section class="section-block">
   <div class="section-head">
-    <h2>Research Focus</h2>
+    <h2>Research focus</h2>
   </div>
 
   <div class="bento-grid">

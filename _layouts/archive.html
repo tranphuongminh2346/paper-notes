@@ -17,7 +17,7 @@ layout: default
   <span class="hero-kicker">Literature Archive</span>
   <h1 class="hero-title">Papers &amp; Reading Analytics</h1>
   <p class="hero-lead">
-    Filter every paper note by research field, reading status, title, author, journal, or DOI. All counts update directly from verified YAML front matter.
+    Filter notes by research field, reading status, title, author, journal, or DOI. Counts update from the YAML metadata on each note.
   </p>
 
   <div class="kpi-grid archive-kpi">
@@ -188,7 +188,7 @@ layout: default
     </div>
   {% else %}
     <div class="empty-state">
-      No dated reading entries yet — monthly activity updates strictly from notes containing a verified <code>date_read</code> (<code>YYYY-MM-DD</code>).
+      No dated reading entries yet. Monthly activity updates from notes that have a verified <code>date_read</code> (<code>YYYY-MM-DD</code>).
     </div>
   {% endif %}
 </section>
