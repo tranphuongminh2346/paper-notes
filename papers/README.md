@@ -1,22 +1,22 @@
-# Paper Notes Archive
+# Paper notes archive
 
-[← Back to Home](../README.md) · [Reading List](../reading-list.md) · [Concepts](../concepts/README.md)
+[Back to home](../README.md) · [Reading list](../reading-list.md) · [Concepts](../concepts/README.md)
 
-This archive catalogs all scientific literature notes in the repository by research field and publication year.
+This archive indexes literature notes in the repository by research field and publication year.
 
-## Reading Statistics
+## Reading statistics
 
 | Metric | Count |
 | :--- | :---: |
-| Total Papers Added | 1 |
-| Completed | 0 |
-| In Progress | 1 |
+| Total papers added | 1 |
+| Completed | 1 |
+| In progress | 0 |
 | Draft | 0 |
-| Not Started | 0 |
+| Not started | 0 |
 
-### Papers by Research Field
+### Papers by research field
 
-| Research Field | Paper Count | Directory |
+| Research field | Paper count | Directory |
 | :--- | :---: | :--- |
 | [Genetics](genetics/README.md) | 0 | `papers/genetics/` |
 | [Molecular Biology](molecular-biology/README.md) | 0 | `papers/molecular-biology/` |
@@ -25,38 +25,40 @@ This archive catalogs all scientific literature notes in the repository by resea
 | [Genomics](genomics/README.md) | 0 | `papers/genomics/` |
 | [Machine Learning](machine-learning/README.md) | 0 | `papers/machine-learning/` |
 
-### Reading Activity by Month
+### Reading activity by month
 
-*No dated reading entries yet — monthly counts update strictly from notes with a verified `date_read` (`YYYY-MM-DD`).*
+| Month | Dated entries | Completed |
+| :--- | :---: | :---: |
+| `2026-11` | 1 | 1 |
 
-## Chronological Index (Newest First)
+## Chronological index (newest first)
 
-| Year | Title | Authors | Journal | Field | Status | Date Read |
+| Year | Title | Authors | Journal | Field | Status | Date read |
 | :---: | :--- | :--- | :--- | :--- | :--- | :--- |
-| 2018 | [Deep learning improves prediction of CRISPR–Cpf1 guide RNA activity](bioinformatics/2018-kim-deep-learning-crispr-cpf1.md) | Kim et al. | Nature Biotechnology | Bioinformatics | `In Progress` | — |
+| 2018 | [Deep learning improves prediction of CRISPR–Cpf1 guide RNA activity](bioinformatics/2018-kim-deep-learning-crispr-cpf1.md) | Kim et al. | Nature Biotechnology | Bioinformatics | `Completed` | 2026-11-27 |
 
-## Browse by Research Field
+## Browse by research field
 
 ### [Genetics](genetics/README.md)
 
-*No notes in this category yet.*
+No notes in this category yet.
 
 ### [Molecular Biology](molecular-biology/README.md)
 
-*No notes in this category yet.*
+No notes in this category yet.
 
 ### [Synthetic Biology](synthetic-biology/README.md)
 
-*No notes in this category yet.*
+No notes in this category yet.
 
 ### [Bioinformatics](bioinformatics/README.md)
 
-- [Deep learning improves prediction of CRISPR–Cpf1 guide RNA activity](bioinformatics/2018-kim-deep-learning-crispr-cpf1.md) — Kim et al. (2018) · `In Progress`
+- [Deep learning improves prediction of CRISPR–Cpf1 guide RNA activity](bioinformatics/2018-kim-deep-learning-crispr-cpf1.md), Kim et al. (2018), `Completed`
 
 ### [Genomics](genomics/README.md)
 
-*No notes in this category yet.*
+No notes in this category yet.
 
 ### [Machine Learning](machine-learning/README.md)
 
-*No notes in this category yet.*
+No notes in this category yet.

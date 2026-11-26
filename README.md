@@ -18,7 +18,7 @@ My reading focuses on molecular and synthetic biology, especially CRISPR-Cas9 an
 
 | Paper | Authors | Year | Field | Reading status |
 | :--- | :--- | :---: | :--- | :--- |
-| [Deep learning improves prediction of CRISPR–Cpf1 guide RNA activity](papers/bioinformatics/2018-kim-deep-learning-crispr-cpf1.md) | Kim et al. | 2018 | [Bioinformatics](papers/bioinformatics/README.md) | `In Progress` |
+| [Deep learning improves prediction of CRISPR–Cpf1 guide RNA activity](papers/bioinformatics/2018-kim-deep-learning-crispr-cpf1.md) | Kim et al. | 2018 | [Bioinformatics](papers/bioinformatics/README.md) | `Completed` |
 
 See the full list in [Papers archive](papers/README.md).
 
@@ -40,11 +40,11 @@ Counts below reflect the YAML metadata in `papers/`. Drafts and in-progress note
 | Metric | Count |
 | :--- | :---: |
 | Total papers added | 1 |
-| Completed notes | 0 |
-| Currently reading (`In Progress` / `Draft`) | 1 |
+| Completed notes | 1 |
+| Currently reading (`In Progress` / `Draft`) | 0 |
 | Queued (`Not Started`) | 0 |
 
-Monthly counts will appear once completed notes include a `date_read` (`YYYY-MM-DD`).
+Monthly activity (`2026-11`): 1 dated entry, 1 completed.
 
 ## Links
 
