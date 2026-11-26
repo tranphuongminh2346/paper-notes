@@ -2,16 +2,43 @@
 layout: default
 ---
 
-{% assign all_papers = site.pages | where_exp: "p", "p.reading_status" %}
-{% assign dated_papers = all_papers | where_exp: "p", "p.year != nil and p.year != ''" | sort: "year" | reverse %}
-{% assign undated_papers = all_papers | where_exp: "p", "p.year == nil or p.year == ''" %}
-{% assign sorted_papers = dated_papers | concat: undated_papers %}
+{% assign all_papers = "" | split: "" %}
+{% assign dated_papers = "" | split: "" %}
+{% assign undated_papers = "" | split: "" %}
+{% assign papers_with_dates = "" | split: "" %}
+{% assign paper_completed = 0 %}
+{% assign paper_in_progress = 0 %}
+{% assign paper_draft = 0 %}
+{% assign paper_not_started = 0 %}
 
+{% for p in site.pages %}
+  {% if p.reading_status and p.reading_status != "" %}
+    {% assign all_papers = all_papers | push: p %}
+    {% if p.year and p.year != "" %}
+      {% assign dated_papers = dated_papers | push: p %}
+    {% else %}
+      {% assign undated_papers = undated_papers | push: p %}
+    {% endif %}
+    {% if p.date_read and p.date_read != "" %}
+      {% assign papers_with_dates = papers_with_dates | push: p %}
+    {% endif %}
+    {% if p.reading_status == "Completed" %}
+      {% assign paper_completed = paper_completed | plus: 1 %}
+    {% elsif p.reading_status == "In Progress" %}
+      {% assign paper_in_progress = paper_in_progress | plus: 1 %}
+    {% elsif p.reading_status == "Draft" %}
+      {% assign paper_draft = paper_draft | plus: 1 %}
+    {% elsif p.reading_status == "Not Started" %}
+      {% assign paper_not_started = paper_not_started | plus: 1 %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% if dated_papers.size > 1 %}
+  {% assign dated_papers = dated_papers | sort: "year" | reverse %}
+{% endif %}
+{% assign sorted_papers = dated_papers | concat: undated_papers %}
 {% assign paper_total = all_papers | size %}
-{% assign paper_completed = all_papers | where: "reading_status", "Completed" | size %}
-{% assign paper_in_progress = all_papers | where: "reading_status", "In Progress" | size %}
-{% assign paper_draft = all_papers | where: "reading_status", "Draft" | size %}
-{% assign paper_not_started = all_papers | where: "reading_status", "Not Started" | size %}
 
 <section class="archive-header">
   <span class="hero-kicker">Literature Archive</span>
@@ -145,7 +172,6 @@ layout: default
     <h2>Reading Activity by Month</h2>
   </div>
 
-  {% assign papers_with_dates = all_papers | where_exp: "p", "p.date_read != nil and p.date_read != ''" %}
   {% if papers_with_dates.size > 0 %}
     {% assign month_tokens = "" | split: "" %}
     {% for p in papers_with_dates %}
@@ -154,7 +180,11 @@ layout: default
         {% assign month_tokens = month_tokens | push: m_key %}
       {% endunless %}
     {% endfor %}
-    {% assign sorted_months = month_tokens | sort | reverse %}
+    {% if month_tokens.size > 1 %}
+      {% assign sorted_months = month_tokens | sort | reverse %}
+    {% else %}
+      {% assign sorted_months = month_tokens %}
+    {% endif %}
     <div class="table-wrap">
       <table class="data-table">
         <thead>

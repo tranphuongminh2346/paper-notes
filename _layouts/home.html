@@ -2,14 +2,52 @@
 layout: default
 ---
 
-{% assign all_papers = site.pages | where_exp: "p", "p.reading_status" %}
-{% assign dated_papers = all_papers | where_exp: "p", "p.year != nil and p.year != ''" | sort: "year" | reverse %}
-{% assign undated_papers = all_papers | where_exp: "p", "p.year == nil or p.year == ''" %}
-{% assign sorted_papers = dated_papers | concat: undated_papers %}
+{% assign all_papers = "" | split: "" %}
+{% assign dated_papers = "" | split: "" %}
+{% assign undated_papers = "" | split: "" %}
+{% assign paper_completed = 0 %}
+{% assign paper_in_progress = 0 %}
+{% assign cnt_genetics = 0 %}
+{% assign cnt_molbio = 0 %}
+{% assign cnt_synbio = 0 %}
+{% assign cnt_bioinf = 0 %}
+{% assign cnt_genomics = 0 %}
+{% assign cnt_ml = 0 %}
 
+{% for p in site.pages %}
+  {% if p.reading_status and p.reading_status != "" %}
+    {% assign all_papers = all_papers | push: p %}
+    {% if p.year and p.year != "" %}
+      {% assign dated_papers = dated_papers | push: p %}
+    {% else %}
+      {% assign undated_papers = undated_papers | push: p %}
+    {% endif %}
+    {% if p.reading_status == "Completed" %}
+      {% assign paper_completed = paper_completed | plus: 1 %}
+    {% elsif p.reading_status == "In Progress" or p.reading_status == "Draft" %}
+      {% assign paper_in_progress = paper_in_progress | plus: 1 %}
+    {% endif %}
+    {% if p.category == "genetics" %}
+      {% assign cnt_genetics = cnt_genetics | plus: 1 %}
+    {% elsif p.category == "molecular-biology" %}
+      {% assign cnt_molbio = cnt_molbio | plus: 1 %}
+    {% elsif p.category == "synthetic-biology" %}
+      {% assign cnt_synbio = cnt_synbio | plus: 1 %}
+    {% elsif p.category == "bioinformatics" %}
+      {% assign cnt_bioinf = cnt_bioinf | plus: 1 %}
+    {% elsif p.category == "genomics" %}
+      {% assign cnt_genomics = cnt_genomics | plus: 1 %}
+    {% elsif p.category == "machine-learning" %}
+      {% assign cnt_ml = cnt_ml | plus: 1 %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% if dated_papers.size > 1 %}
+  {% assign dated_papers = dated_papers | sort: "year" | reverse %}
+{% endif %}
+{% assign sorted_papers = dated_papers | concat: undated_papers %}
 {% assign paper_total = all_papers | size %}
-{% assign paper_completed = all_papers | where: "reading_status", "Completed" | size %}
-{% assign paper_in_progress = all_papers | where_exp: "p", "p.reading_status == 'In Progress' or p.reading_status == 'Draft'" | size %}
 
 <section class="hero">
   <span class="hero-kicker">University of Western Australia · Molecular Science &amp; Bioinformatics</span>
@@ -101,13 +139,6 @@ layout: default
     <h2>Browse by field</h2>
     <a class="section-link" href="{{ '/reading-list.html' | relative_url }}">Reading list</a>
   </div>
-
-  {% assign cnt_genetics = all_papers | where: "category", "genetics" | size %}
-  {% assign cnt_molbio = all_papers | where: "category", "molecular-biology" | size %}
-  {% assign cnt_synbio = all_papers | where: "category", "synthetic-biology" | size %}
-  {% assign cnt_bioinf = all_papers | where: "category", "bioinformatics" | size %}
-  {% assign cnt_genomics = all_papers | where: "category", "genomics" | size %}
-  {% assign cnt_ml = all_papers | where: "category", "machine-learning" | size %}
 
   <div class="field-grid">
     <a class="field-card" href="{{ '/papers/' | relative_url }}?field=bioinformatics">
