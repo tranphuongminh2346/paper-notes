@@ -1,41 +1,25 @@
-<p align="center">
-  <img src="assets/images/banner.svg" alt="Paper Notes — Scientific Literature Reading Journal and Research Portfolio" width="100%" />
-</p>
+# Paper Notes
 
-<p align="center">
-  <img src="https://img.shields.io/badge/UWA-Molecular_Science_%26_Bioinformatics-0f766e?style=flat-square" alt="UWA Molecular Science and Bioinformatics" />
-  <img src="https://img.shields.io/badge/Papers-1-1e3a5f?style=flat-square" alt="Total Papers: 1" />
-  <img src="https://img.shields.io/badge/Completed-0-059669?style=flat-square" alt="Completed Papers: 0" />
-  <img src="https://img.shields.io/badge/In_Progress-1-d97706?style=flat-square" alt="In Progress Papers: 1" />
-  <img src="https://img.shields.io/badge/Integrity-Verified_DOIs_Only-334155?style=flat-square" alt="Verified DOIs Only" />
-</p>
+> Scientific Literature Reading Journal & Research Portfolio · Molecular Science & Bioinformatics, University of Western Australia
 
-<p align="center">
-  <a href="about.md">About</a> &nbsp;·&nbsp;
-  <a href="papers/README.md">Papers Archive</a> &nbsp;·&nbsp;
-  <a href="concepts/README.md">Concepts</a> &nbsp;·&nbsp;
-  <a href="reading-list.md">Reading List</a> &nbsp;·&nbsp;
-  <a href="templates/paper-template.md">Template</a>
-</p>
+[About](about.md) · [Papers Archive](papers/README.md) · [Concepts](concepts/README.md) · [Reading List](reading-list.md) · [Web Portfolio](https://tranphuongminh2346.github.io/paper-notes/)
 
 ---
 
 ## Introduction
 
-Welcome to **Paper Notes**, my personal scientific literature reading journal and academic research portfolio.  
+Welcome to **Paper Notes**, my personal scientific literature reading journal and research portfolio.  
 I am **Minh Tran**, an undergraduate student in **Molecular Science and Bioinformatics** at the **University of Western Australia (UWA)**, building a structured archive of primary research analyses across modern molecular biology and computational biosciences.
 
-Every paper entry follows a consistent 12-section analytical framework — examining research questions, explicit vs. inferred hypotheses, experimental controls, figure-by-figure evidence, and methodological limitations — while strictly separating **verified published claims** from **my own synthesis and open questions**.
+Every entry follows a consistent 12-section analytical framework — examining research questions, explicit vs. inferred hypotheses, experimental controls, figure-by-figure evidence, and methodological limitations — while strictly separating **verified published claims** from **my own synthesis and open questions**.
 
 ---
 
 ## Research Interests
 
-| Theme | Focus Areas |
-| :--- | :--- |
-| **Molecular & Synthetic Biology** | CRISPR-Cas effectors (Cas9, Cas12a/Cpf1), RNA-guided nucleic acid targeting, genetic circuits, and plant synthetic biology |
-| **Genetics & Functional Genomics** | Regulatory variation, chromatin accessibility, epigenomics, transcriptomics, and genome-wide perturbation screens |
-| **Bioinformatics & Machine Learning** | Deep learning on nucleic acid sequences, guide RNA activity prediction, structural modeling, and reproducible biological analysis |
+- **Molecular & Synthetic Biology:** CRISPR-Cas effectors (Cas9, Cas12a/Cpf1), RNA-guided nucleic acid targeting, genetic circuits, and plant synthetic biology.
+- **Genetics & Functional Genomics:** Regulatory variation, chromatin accessibility, epigenomics, transcriptomics, and genome-wide perturbation screens.
+- **Bioinformatics & Machine Learning:** Deep learning on nucleic acid sequences, guide RNA activity prediction, structural modeling, and reproducible analysis.
 
 ---
 
@@ -45,7 +29,7 @@ Every paper entry follows a consistent 12-section analytical framework — exami
 | :--- | :--- | :---: | :--- | :--- |
 | [Deep learning improves prediction of CRISPR–Cpf1 guide RNA activity](papers/bioinformatics/2018-kim-deep-learning-crispr-cpf1.md) | Kim et al. | 2018 | [Bioinformatics](papers/bioinformatics/README.md) | `In Progress` |
 
-View the full archive in [Papers Archive](papers/README.md).
+View the complete archive in [Papers Archive](papers/README.md).
 
 ---
 
@@ -73,13 +57,13 @@ All counts below strictly reflect verified YAML metadata inside `papers/` (unfin
 | Currently Reading (`In Progress` / `Draft`) | 1 |
 | Queued (`Not Started`) | 0 |
 
-> **Monthly Activity:** *No dated reading entries yet — monthly counts update strictly from notes containing a verified `date_read` (`YYYY-MM-DD`).*
+**Monthly Activity:** *No dated reading entries yet — monthly counts update strictly from notes containing a verified `date_read` (`YYYY-MM-DD`).*
 
 ---
 
 ## Profile & Links
 
+- **Web Portfolio (GitHub Pages):** [tranphuongminh2346.github.io/paper-notes](https://tranphuongminh2346.github.io/paper-notes/)
 - **GitHub Profile:** [github.com/tranphuongminh2346](https://github.com/tranphuongminh2346)
 - **Repository:** [github.com/tranphuongminh2346/paper-notes](https://github.com/tranphuongminh2346/paper-notes)
-- **Online Portfolio (GitHub Pages):** [tranphuongminh2346.github.io/paper-notes](https://tranphuongminh2346.github.io/paper-notes/) *(available once repository visibility is switched to Public and GitHub Pages is enabled on `main` / `/ (root)`)*
-- **Academic Profile & Integrity Standards:** [About](about.md)
+- **Template Reference:** [templates/paper-template.md](templates/paper-template.md)

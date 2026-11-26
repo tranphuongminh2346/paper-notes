@@ -1,0 +1,271 @@
+---
+layout: default
+---
+
+{% assign all_papers = site.pages | where_exp: "p", "p.reading_status" %}
+{% assign dated_papers = all_papers | where_exp: "p", "p.year != nil and p.year != ''" | sort: "year" | reverse %}
+{% assign undated_papers = all_papers | where_exp: "p", "p.year == nil or p.year == ''" %}
+{% assign sorted_papers = dated_papers | concat: undated_papers %}
+
+{% assign paper_total = all_papers | size %}
+{% assign paper_completed = all_papers | where: "reading_status", "Completed" | size %}
+{% assign paper_in_progress = all_papers | where: "reading_status", "In Progress" | size %}
+{% assign paper_draft = all_papers | where: "reading_status", "Draft" | size %}
+{% assign paper_not_started = all_papers | where: "reading_status", "Not Started" | size %}
+
+<section class="archive-header">
+  <span class="hero-kicker">Literature Archive</span>
+  <h1 class="hero-title">Papers &amp; Reading Analytics</h1>
+  <p class="hero-lead">
+    Filter every paper note by research field, reading status, title, author, journal, or DOI. All counts update directly from verified YAML front matter.
+  </p>
+
+  <div class="kpi-grid archive-kpi">
+    <div class="kpi-card">
+      <span class="kpi-label">Total Added</span>
+      <strong class="kpi-value">{{ paper_total }}</strong>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-label">Completed</span>
+      <strong class="kpi-value kpi-value--teal">{{ paper_completed }}</strong>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-label">In Progress / Draft</span>
+      <strong class="kpi-value kpi-value--amber">{{ paper_in_progress | plus: paper_draft }}</strong>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-label">Not Started</span>
+      <strong class="kpi-value">{{ paper_not_started }}</strong>
+    </div>
+  </div>
+</section>
+
+<section class="filter-toolbar" aria-label="Filter paper archive">
+  <input
+    type="search"
+    id="paper-search"
+    class="search-input"
+    placeholder="Search by title, author, journal, DOI, or tag..."
+    aria-label="Search papers"
+  />
+
+  <div class="filter-row">
+    <span class="filter-label">Field</span>
+    <div class="chip-group" id="field-filters">
+      <button type="button" class="filter-chip is-active" data-field="all">All</button>
+      <button type="button" class="filter-chip" data-field="bioinformatics">Bioinformatics</button>
+      <button type="button" class="filter-chip" data-field="genetics">Genetics</button>
+      <button type="button" class="filter-chip" data-field="genomics">Genomics</button>
+      <button type="button" class="filter-chip" data-field="molecular-biology">Molecular Biology</button>
+      <button type="button" class="filter-chip" data-field="synthetic-biology">Synthetic Biology</button>
+      <button type="button" class="filter-chip" data-field="machine-learning">Machine Learning</button>
+    </div>
+  </div>
+
+  <div class="filter-row">
+    <span class="filter-label">Status</span>
+    <div class="chip-group" id="status-filters">
+      <button type="button" class="filter-chip is-active" data-status="all">All</button>
+      <button type="button" class="filter-chip" data-status="Completed">Completed</button>
+      <button type="button" class="filter-chip" data-status="In Progress">In Progress</button>
+      <button type="button" class="filter-chip" data-status="Draft">Draft</button>
+      <button type="button" class="filter-chip" data-status="Not Started">Not Started</button>
+    </div>
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="section-head">
+    <h2>Archive Entries</h2>
+    <span class="section-count" id="visible-count">{{ sorted_papers.size }} shown</span>
+  </div>
+
+  <div class="paper-card-list" id="archive-list">
+    {% for paper in sorted_papers %}
+      {% assign p_status_slug = paper.reading_status | downcase | replace: ' ', '-' %}
+      {% assign authors_str = paper.authors | join: ', ' %}
+      {% assign tags_str = paper.tags | join: ' ' %}
+      {% capture search_blob %}{{ paper.title }} {{ authors_str }} {{ paper.journal }} {{ paper.doi }} {{ tags_str }} {{ paper.year }}{% endcapture %}
+      <a
+        class="paper-card"
+        href="{{ paper.url | relative_url }}"
+        data-category="{{ paper.category }}"
+        data-status="{{ paper.reading_status }}"
+        data-search="{{ search_blob | downcase | strip_newlines | escape }}"
+      >
+        <div class="paper-card-top">
+          <div class="meta-pills">
+            <span class="pill pill--category">{{ paper.category | replace: '-', ' ' }}</span>
+            <span class="pill pill--status status-{{ p_status_slug }}">{{ paper.reading_status }}</span>
+            {% if paper.difficulty and paper.difficulty != "" and paper.difficulty != "Unspecified" %}
+              <span class="pill pill--neutral">{{ paper.difficulty }}</span>
+            {% endif %}
+          </div>
+          {% if paper.year and paper.year != "" %}
+            <span class="paper-year">{{ paper.year }}</span>
+          {% endif %}
+        </div>
+        <h3 class="paper-card-title">{{ paper.title }}</h3>
+        <p class="paper-card-meta">
+          {% if paper.authors and paper.authors.size > 0 %}
+            {% assign first_surname = paper.authors.first | split: ' ' | last %}
+            {% if paper.authors.size == 1 %}
+              {{ first_surname }}
+            {% elsif paper.authors.size == 2 %}
+              {% assign second_surname = paper.authors[1] | split: ' ' | last %}
+              {{ first_surname }} &amp; {{ second_surname }}
+            {% else %}
+              {{ first_surname }} et al.
+            {% endif %}
+          {% else %}
+            Authors pending
+          {% endif %}
+          {% if paper.journal and paper.journal != "" %} · <em>{{ paper.journal }}</em>{% endif %}
+          {% if paper.doi and paper.doi != "" %} · <code>{{ paper.doi }}</code>{% endif %}
+          {% if paper.date_read and paper.date_read != "" %} · Read {{ paper.date_read }}{% endif %}
+        </p>
+        {% if paper.tags and paper.tags.size > 0 %}
+          <div class="tag-row">
+            {% for tag in paper.tags %}
+              <span class="tag-pill">#{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+
+  <div class="empty-state" id="archive-empty" hidden>
+    No paper notes match the selected filters.
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="section-head">
+    <h2>Reading Activity by Month</h2>
+  </div>
+
+  {% assign papers_with_dates = all_papers | where_exp: "p", "p.date_read != nil and p.date_read != ''" %}
+  {% if papers_with_dates.size > 0 %}
+    {% assign month_tokens = "" | split: "" %}
+    {% for p in papers_with_dates %}
+      {% assign m_key = p.date_read | date: "%Y-%m" %}
+      {% unless month_tokens contains m_key %}
+        {% assign month_tokens = month_tokens | push: m_key %}
+      {% endunless %}
+    {% endfor %}
+    {% assign sorted_months = month_tokens | sort | reverse %}
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Dated Entries</th>
+            <th>Completed</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for m in sorted_months %}
+            {% assign m_total = 0 %}
+            {% assign m_done = 0 %}
+            {% for p in papers_with_dates %}
+              {% assign pm = p.date_read | date: "%Y-%m" %}
+              {% if pm == m %}
+                {% assign m_total = m_total | plus: 1 %}
+                {% if p.reading_status == "Completed" %}
+                  {% assign m_done = m_done | plus: 1 %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+            <tr>
+              <td><code>{{ m }}</code></td>
+              <td>{{ m_total }}</td>
+              <td>{{ m_done }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <div class="empty-state">
+      No dated reading entries yet — monthly activity updates strictly from notes containing a verified <code>date_read</code> (<code>YYYY-MM-DD</code>).
+    </div>
+  {% endif %}
+</section>
+
+<script>
+  (function () {
+    var searchInput = document.getElementById("paper-search");
+    var fieldButtons = document.querySelectorAll("#field-filters .filter-chip");
+    var statusButtons = document.querySelectorAll("#status-filters .filter-chip");
+    var cards = document.querySelectorAll("#archive-list .paper-card");
+    var emptyBox = document.getElementById("archive-empty");
+    var countLabel = document.getElementById("visible-count");
+
+    var activeField = "all";
+    var activeStatus = "all";
+
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var fieldParam = params.get("field");
+      if (fieldParam) {
+        fieldButtons.forEach(function (btn) {
+          if (btn.getAttribute("data-field") === fieldParam) {
+            activeField = fieldParam;
+          }
+        });
+      }
+    } catch (e) {}
+
+    function syncChips(buttons, attr, activeVal) {
+      buttons.forEach(function (btn) {
+        btn.classList.toggle("is-active", btn.getAttribute(attr) === activeVal);
+      });
+    }
+
+    function applyFilters() {
+      var q = (searchInput ? searchInput.value : "").trim().toLowerCase();
+      var shown = 0;
+
+      cards.forEach(function (card) {
+        var cat = card.getAttribute("data-category") || "";
+        var status = card.getAttribute("data-status") || "";
+        var blob = card.getAttribute("data-search") || "";
+
+        var matchField = activeField === "all" || cat === activeField;
+        var matchStatus = activeStatus === "all" || status === activeStatus;
+        var matchQuery = !q || blob.indexOf(q) !== -1;
+
+        var visible = matchField && matchStatus && matchQuery;
+        card.style.display = visible ? "" : "none";
+        if (visible) shown += 1;
+      });
+
+      if (emptyBox) emptyBox.hidden = shown > 0;
+      if (countLabel) countLabel.textContent = shown + " shown";
+    }
+
+    fieldButtons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        activeField = btn.getAttribute("data-field") || "all";
+        syncChips(fieldButtons, "data-field", activeField);
+        applyFilters();
+      });
+    });
+
+    statusButtons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        activeStatus = btn.getAttribute("data-status") || "all";
+        syncChips(statusButtons, "data-status", activeStatus);
+        applyFilters();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener("input", applyFilters);
+    }
+
+    syncChips(fieldButtons, "data-field", activeField);
+    applyFilters();
+  })();
+</script>

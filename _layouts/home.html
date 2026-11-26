@@ -1,0 +1,182 @@
+---
+layout: default
+---
+
+{% assign all_papers = site.pages | where_exp: "p", "p.reading_status" %}
+{% assign dated_papers = all_papers | where_exp: "p", "p.year != nil and p.year != ''" | sort: "year" | reverse %}
+{% assign undated_papers = all_papers | where_exp: "p", "p.year == nil or p.year == ''" %}
+{% assign sorted_papers = dated_papers | concat: undated_papers %}
+
+{% assign paper_total = all_papers | size %}
+{% assign paper_completed = all_papers | where: "reading_status", "Completed" | size %}
+{% assign paper_in_progress = all_papers | where_exp: "p", "p.reading_status == 'In Progress' or p.reading_status == 'Draft'" | size %}
+
+<section class="hero">
+  <span class="hero-kicker">University of Western Australia · Molecular Science &amp; Bioinformatics</span>
+  <h1 class="hero-title">Scientific Paper Reading Journal &amp; Research Portfolio</h1>
+  <p class="hero-lead">
+    A structured archive of primary literature analyses across molecular biology, genetics, synthetic biology, genomics, and computational biosciences — strictly separating verified published results from independent critical synthesis.
+  </p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="{{ '/papers/' | relative_url }}">Explore Paper Archive →</a>
+    <a class="btn-secondary" href="{{ '/about.html' | relative_url }}">About &amp; Integrity</a>
+    <a class="btn-ghost" href="https://github.com/tranphuongminh2346" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+  </div>
+</section>
+
+<section class="kpi-grid" aria-label="Live reading statistics">
+  <div class="kpi-card">
+    <span class="kpi-label">Total Papers</span>
+    <strong class="kpi-value">{{ paper_total }}</strong>
+  </div>
+  <div class="kpi-card">
+    <span class="kpi-label">Completed Notes</span>
+    <strong class="kpi-value kpi-value--teal">{{ paper_completed }}</strong>
+  </div>
+  <div class="kpi-card">
+    <span class="kpi-label">Currently Reading</span>
+    <strong class="kpi-value kpi-value--amber">{{ paper_in_progress }}</strong>
+  </div>
+  <div class="kpi-card">
+    <span class="kpi-label">Research Fields</span>
+    <strong class="kpi-value">6</strong>
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="section-head">
+    <h2>Latest Paper Notes</h2>
+    <a class="section-link" href="{{ '/papers/' | relative_url }}">View full archive →</a>
+  </div>
+
+  {% if sorted_papers.size > 0 %}
+    <div class="paper-card-list">
+      {% for paper in sorted_papers limit:5 %}
+        {% assign p_status_slug = paper.reading_status | downcase | replace: ' ', '-' %}
+        <a class="paper-card" href="{{ paper.url | relative_url }}">
+          <div class="paper-card-top">
+            <div class="meta-pills">
+              <span class="pill pill--category">{{ paper.category | replace: '-', ' ' }}</span>
+              <span class="pill pill--status status-{{ p_status_slug }}">{{ paper.reading_status }}</span>
+            </div>
+            {% if paper.year and paper.year != "" %}
+              <span class="paper-year">{{ paper.year }}</span>
+            {% endif %}
+          </div>
+          <h3 class="paper-card-title">{{ paper.title }}</h3>
+          <p class="paper-card-meta">
+            {% if paper.authors and paper.authors.size > 0 %}
+              {% assign first_surname = paper.authors.first | split: ' ' | last %}
+              {% if paper.authors.size == 1 %}
+                {{ first_surname }}
+              {% elsif paper.authors.size == 2 %}
+                {% assign second_surname = paper.authors[1] | split: ' ' | last %}
+                {{ first_surname }} &amp; {{ second_surname }}
+              {% else %}
+                {{ first_surname }} et al.
+              {% endif %}
+            {% else %}
+              Authors pending
+            {% endif %}
+            {% if paper.journal and paper.journal != "" %} · <em>{{ paper.journal }}</em>{% endif %}
+            {% if paper.doi and paper.doi != "" %} · <code>{{ paper.doi }}</code>{% endif %}
+          </p>
+          {% if paper.tags and paper.tags.size > 0 %}
+            <div class="tag-row">
+              {% for tag in paper.tags limit:5 %}
+                <span class="tag-pill">#{{ tag }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="empty-state">No paper notes published yet.</div>
+  {% endif %}
+</section>
+
+<section class="section-block">
+  <div class="section-head">
+    <h2>Browse by Research Field</h2>
+    <a class="section-link" href="{{ '/reading-list.html' | relative_url }}">Reading queue →</a>
+  </div>
+
+  {% assign cnt_genetics = all_papers | where: "category", "genetics" | size %}
+  {% assign cnt_molbio = all_papers | where: "category", "molecular-biology" | size %}
+  {% assign cnt_synbio = all_papers | where: "category", "synthetic-biology" | size %}
+  {% assign cnt_bioinf = all_papers | where: "category", "bioinformatics" | size %}
+  {% assign cnt_genomics = all_papers | where: "category", "genomics" | size %}
+  {% assign cnt_ml = all_papers | where: "category", "machine-learning" | size %}
+
+  <div class="field-grid">
+    <a class="field-card" href="{{ '/papers/' | relative_url }}?field=bioinformatics">
+      <div class="field-card-head">
+        <h3>Bioinformatics</h3>
+        <span class="count-pill">{{ cnt_bioinf }}</span>
+      </div>
+      <p>Sequence modeling, guide RNA design algorithms, structural analysis, and computational pipelines.</p>
+    </a>
+
+    <a class="field-card" href="{{ '/papers/' | relative_url }}?field=genetics">
+      <div class="field-card-head">
+        <h3>Genetics</h3>
+        <span class="count-pill">{{ cnt_genetics }}</span>
+      </div>
+      <p>Inheritance, quantitative genetics, regulatory variants, and genetic perturbation screens.</p>
+    </a>
+
+    <a class="field-card" href="{{ '/papers/' | relative_url }}?field=genomics">
+      <div class="field-card-head">
+        <h3>Genomics</h3>
+        <span class="count-pill">{{ cnt_genomics }}</span>
+      </div>
+      <p>Chromatin accessibility, epigenomics, transcriptomics, and genome-wide profiling.</p>
+    </a>
+
+    <a class="field-card" href="{{ '/papers/' | relative_url }}?field=molecular-biology">
+      <div class="field-card-head">
+        <h3>Molecular Biology</h3>
+        <span class="count-pill">{{ cnt_molbio }}</span>
+      </div>
+      <p>Mechanisms of DNA/RNA catalysis, CRISPR effectors, gene expression, and protein function.</p>
+    </a>
+
+    <a class="field-card" href="{{ '/papers/' | relative_url }}?field=synthetic-biology">
+      <div class="field-card-head">
+        <h3>Synthetic Biology</h3>
+        <span class="count-pill">{{ cnt_synbio }}</span>
+      </div>
+      <p>Engineered genetic circuits, cellular logic gates, and synthetic regulatory parts.</p>
+    </a>
+
+    <a class="field-card" href="{{ '/papers/' | relative_url }}?field=machine-learning">
+      <div class="field-card-head">
+        <h3>Machine Learning</h3>
+        <span class="count-pill">{{ cnt_ml }}</span>
+      </div>
+      <p>Deep learning and statistical modeling applied to biological sequences and phenotypes.</p>
+    </a>
+  </div>
+</section>
+
+<section class="section-block">
+  <div class="section-head">
+    <h2>Research Focus</h2>
+  </div>
+
+  <div class="bento-grid">
+    <div class="bento-card">
+      <h3>Molecular &amp; Synthetic Biology</h3>
+      <p>CRISPR-Cas9 and Cas12a/Cpf1 effectors, RNA-guided targeting, programmable gene circuits, and plant synthetic biology.</p>
+    </div>
+    <div class="bento-card">
+      <h3>Genetics &amp; Functional Genomics</h3>
+      <p>Chromatin accessibility, regulatory architecture, transcriptional control, and high-throughput functional screens.</p>
+    </div>
+    <div class="bento-card">
+      <h3>Bioinformatics &amp; Machine Learning</h3>
+      <p>Sequence representation learning, guide RNA activity prediction, reproducibility, and rigorous model benchmarking.</p>
+    </div>
+  </div>
+</section>

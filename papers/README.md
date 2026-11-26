@@ -2,12 +2,6 @@
 
 [← Back to Home](../README.md) · [Reading List](../reading-list.md) · [Concepts](../concepts/README.md)
 
-<p>
-  <img src="https://img.shields.io/badge/Total-1-1e3a5f?style=flat-square" alt="Total: 1" />
-  <img src="https://img.shields.io/badge/Completed-0-059669?style=flat-square" alt="Completed: 0" />
-  <img src="https://img.shields.io/badge/In_Progress-1-d97706?style=flat-square" alt="In Progress: 1" />
-</p>
-
 This archive catalogs all scientific literature notes in the repository by research field and publication year.
 
 ## Reading Statistics
