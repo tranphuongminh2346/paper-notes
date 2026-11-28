@@ -18,6 +18,7 @@ My reading focuses on molecular and synthetic biology, especially CRISPR-Cas9 an
 
 | Paper | Authors | Year | Field | Reading status |
 | :--- | :--- | :---: | :--- | :--- |
+| [Site-specific DNA insertion into the human genome with engineered recombinases](papers/synthetic-biology/2025-fanton-engineered-recombinases.md) | Fanton et al. | 2025 | [Synthetic Biology](papers/synthetic-biology/README.md) | `Completed` |
 | [Deep learning improves prediction of CRISPR–Cpf1 guide RNA activity](papers/bioinformatics/2018-kim-deep-learning-crispr-cpf1.md) | Kim et al. | 2018 | [Bioinformatics](papers/bioinformatics/README.md) | `Completed` |
 
 See the full list in [Papers archive](papers/README.md).
@@ -28,7 +29,7 @@ See the full list in [Papers archive](papers/README.md).
 | :--- | :--- | :---: |
 | [Genetics](papers/genetics/README.md) | Inheritance, quantitative genetics, regulatory variants, and perturbation screens. | 0 |
 | [Molecular Biology](papers/molecular-biology/README.md) | Mechanisms of DNA and RNA catalysis, CRISPR effectors, gene expression, and protein function. | 0 |
-| [Synthetic Biology](papers/synthetic-biology/README.md) | Engineered genetic circuits, cellular logic gates, and synthetic regulatory parts. | 0 |
+| [Synthetic Biology](papers/synthetic-biology/README.md) | Engineered genetic circuits, cellular logic gates, and synthetic regulatory parts. | 1 |
 | [Bioinformatics](papers/bioinformatics/README.md) | Sequence modeling, guide RNA design algorithms, structural analysis, and analysis pipelines. | 1 |
 | [Genomics](papers/genomics/README.md) | Chromatin accessibility, epigenomics, transcriptomics, and genome-wide profiling. | 0 |
 | [Machine Learning](papers/machine-learning/README.md) | Deep learning and statistical modeling applied to biological sequences and phenotypes. | 0 |
@@ -39,12 +40,12 @@ Counts below reflect the YAML metadata in `papers/`. Drafts and in-progress note
 
 | Metric | Count |
 | :--- | :---: |
-| Total papers added | 1 |
-| Completed notes | 1 |
+| Total papers added | 2 |
+| Completed notes | 2 |
 | Currently reading (`In Progress` / `Draft`) | 0 |
 | Queued (`Not Started`) | 0 |
 
-Monthly activity (`2026-11`): 1 dated entry, 1 completed.
+Monthly activity (`2026-11`): 2 dated entries, 2 completed.
 
 ## Links
 

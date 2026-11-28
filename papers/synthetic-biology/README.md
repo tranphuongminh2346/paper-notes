@@ -2,8 +2,10 @@
 
 Engineered genetic circuits, cellular logic gates, and synthetic regulatory parts.
 
-**Notes in this field:** 0 total (0 completed)
+Notes in this field: 1 total (1 completed)
 
-*No paper notes have been added to this category yet.*
+| Year | Title | Authors | Journal | Difficulty | Status | Date read |
+| :---: | :--- | :--- | :--- | :--- | :--- | :--- |
+| 2025 | [Site-specific DNA insertion into the human genome with engineered recombinases](2025-fanton-engineered-recombinases.md) | Fanton et al. | Nature Biotechnology | Intermediate | `Completed` | 2026-11-28 |
 
-[← Back to Papers Archive](../README.md)
+[Back to papers archive](../README.md)

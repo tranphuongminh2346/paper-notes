@@ -21,4 +21,5 @@ Queue entries listed here are not counted in [Reading statistics](README.md#read
 
 | Title | Authors | Year | Journal | DOI | Field | Note |
 | :--- | :--- | :---: | :--- | :--- | :--- | :--- |
+| Site-specific DNA insertion into the human genome with engineered recombinases | Fanton et al. | 2025 | Nature Biotechnology | [10.1038/s41587-025-02895-3](https://doi.org/10.1038/s41587-025-02895-3) | Synthetic Biology | [Read note](papers/synthetic-biology/2025-fanton-engineered-recombinases.md) |
 | Deep learning improves prediction of CRISPR–Cpf1 guide RNA activity | Kim et al. | 2018 | Nature Biotechnology | [10.1038/nbt.4061](https://doi.org/10.1038/nbt.4061) | Bioinformatics | [Read note](papers/bioinformatics/2018-kim-deep-learning-crispr-cpf1.md) |

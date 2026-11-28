@@ -160,7 +160,7 @@ Exploring these questions could make model predictions easier to interpret biolo
 
 ## 11. Related Papers
 
-No related paper notes linked yet.
+- [Site-specific DNA insertion into the human genome with engineered recombinases](../synthetic-biology/2025-fanton-engineered-recombinases.md) (Fanton et al., 2025): contrasts combinatorial protein engineering and regularised linear modelling with deep CNN sequence prediction here.
 
 ## 12. Code and Reproduction
 
